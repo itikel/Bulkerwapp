@@ -6,20 +6,26 @@
   <title>Bulkerwapp</title>
   <link rel="stylesheet" href="estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <body>
 
   <header class="main-header">
     <div class="container-header">
       <div class="logo">
-        <img src="logoBlanco.png" alt="" id="logoB">
+        <img src="Imagenes/logoBlanco.png" alt="" id="logoB">
       </div>
       <nav class="nav-header">
         <ul>
           <li><a href="#" id="btnIngresar">Ingresar</a></li>
           <li><a href="#footer">Sobre Nosotros</a></li>
-          <li><a href="#" class="contact-trigger">Contáctenos</a></li>
+          <li><a href="#" class="contact-trigger" >Contáctenos</a></li>
         </ul>
       </nav>
     </div>
@@ -45,7 +51,6 @@
   
 
 
-<!-- Popup oculto -->
 <div id="contactPopup" class="popup-overlay">
   <div class="popup-content">
     <span class="close-popup" id="closePopup">&times;</span>
@@ -77,56 +82,33 @@
 
   <section class="presentacion">
     <div class="container">
-      <h1>Bulkerwapp</h1>
-      <p>
-        Bulkerwapp es una plataforma pensada para quienes desean automatizar la creación, programación y envío de mensajes desde cualquier dispositivo con conexión a internet, de forma simple y efectiva.
-      </p>
-      <p>
-        Con tecnología avanzada y un software versátil, Bulkerwapp se adapta a empresas, profesionales, instituciones y cualquier organización que necesita un canal de comunicación ágil, profesional y confiable.
-      </p>
-      <p>
-        Podés crear campañas, confirmar turnos, enriquecer tu base de datos, y configurar respuestas automáticas. También podés redirigir llamadas a texto, interactuar por comandos y ofrecer promociones de forma directa y personalizada.
-      </p>
+      <h1 id="txtTitle">Bulkerwapp</h1> 
+      <h3 style="text-align: left;">  Información automatizada.</h3>
+      <img id="imgt" src="https://bulkerwapp.com/web/image/195-c7e9eee8/s_text_image_default_image.jpg" alt="">
     </div>
   </section>
 
   <section class="tab-menu">
     <div class="tabs">
-      <button class="tab-button active" data-tab="otra">Funciones</button>
-      <button class="tab-button" data-tab="timeline">Nuestra Historia</button>
+      <button class="tab-button active" data-tab="timeline">¿Que es?</button>
+      <button class="tab-button " data-tab="otra">Funciones</button>
     </div>
     <div class="tab-content">
-      <div class="tab-pane" id="timeline">
-        <section class="timeline">
-          <div class="timeline-container">
-            <div class="timeline-item left">
-              <div class="content" id="a1">
-                <h3>Inicio del Proyecto Bulkerwapp (2020)</h3>
-                <p>Propuesta de solución de una problemática específica de nuestro primer cliente.</p>
-              </div>
-            </div>
-            <div class="timeline-item right">
-              <div class="content" id="a2">
-                <h3>Bulkerwapp 1.0 (2022)</h3>
-                <p>Sistema de envíos desarrollado por nuestro equipo inicial.</p>
-              </div>
-            </div>
-            <div class="timeline-item left">
-              <div class="content" id="a3">
-                <h3>Bulkerwapp 2.0 (2023)</h3>
-                <p>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</p>
-              </div>
-            </div>
-            <div class="timeline-item right">
-              <div class="content" id="a4">
-                <h3>Bulkerwapp 3.0 (2024)</h3>
-                <p>Sistema de envíos tercerizado y optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
-              </div>
-            </div>
+      <div class="tab-pane active" id="timeline">
+        <section class="otra-seccion">
+          <div class="container">
+            <h2 class="txtOtra">¿Que es Bulkerwapp?</h2>
+            <p class="txtOtra">
+              Bulkerwapp es una plataforma pensada para quienes desean automatizar la creación, programación y envío de mensajes desde cualquier dispositivo con conexión a internet, de forma simple y efectiva.
+            <br>
+              Con tecnología avanzada y un software versátil, Bulkerwapp se adapta a empresas, profesionales, instituciones y cualquier organización que necesita un canal de comunicación ágil, profesional y confiable.
+           <br>
+              Podés crear campañas, confirmar turnos, enriquecer tu base de datos, y configurar respuestas automáticas. También podés redirigir llamadas a texto, interactuar por comandos y ofrecer promociones de forma directa y personalizada.
+           </p>
           </div>
         </section>
       </div>
-      <div class="tab-pane active" id="otra">
+      <div class="tab-pane" id="otra">
         <section class="otra-seccion">
           <div class="container">
             <h2 class="txtOtra">Funciones de Bulkerwapp</h2>
@@ -153,6 +135,55 @@
       </div>
     </div>
   </section>
+
+  <section id="tl" class="timeline">
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content" id="a1">
+          <h3>Inicio del Proyecto Bulkerwapp (2020)</h3>
+          <p>Propuesta de solución de una problemática específica de nuestro primer cliente.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content" id="a2">
+          <h3>Bulkerwapp 1.0 (2022)</h3>
+          <p>Sistema de envíos desarrollado por nuestro equipo inicial.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content" id="a3">
+          <h3>Bulkerwapp 2.0 (2023)</h3>
+          <p>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content" id="a4">
+          <h3>Bulkerwapp 3.0 (2024)</h3>
+          <p>Sistema de envíos tercerizado y optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="swiper-section">
+    <h2 id="txtE">Clientes que confían en nosotros</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/cer.png" alt="Logo 1" /><h5 class="txtSlider">Centro de Emergencias de Rosario</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/cibic.png" alt="Logo 2" /><h5 class="txtSlider">Cibic Laboratorios</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/fertya.png" alt="Logo 3" /><h5 class="txtSlider">Fertya Medicina Reproductiva</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/icr.png" alt="Logo 4" /><h5 class="txtSlider">Instituto Cardovascular de Rosario</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/ineco.png" alt="Logo 5" /><h5 class="txtSlider">Instituto de Neurología Cognitiva</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/kozaca.png" alt="Logo 6" /><h5 class="txtSlider">Kozaca</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/parque.png" alt="Logo 7" /><h5 class="txtSlider">Sanatorio Parque</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/sdniños.png" alt="Logo 8" /><h5 class="txtSlider">Sanatorio de Niños</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/elas.png" alt="Logo 9" /><h5 class="txtSlider">Elas</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/maternidad.png" alt="Logo 10" /><h5 class="txtSlider">Maternidad Oroño</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/grupooroño.png" alt="Logo 11" /><h5 class="txtSlider">Grupo Oroño</h5></div>
+      </div>
+    </div>
+  </section>
+  
 
   <footer id="footer">
     <div class="footer-container">
@@ -235,7 +266,7 @@
 </script>
 
 <script>
-  const ingresarLink = document.querySelector('a[href="#"]'); // o poné un id si querés
+  const ingresarLink = document.querySelector('a[href="#"]'); 
   const popup = document.getElementById("loginPopup");
   const closeBtn = document.getElementById("closeBtn");
   const popupContent = document.getElementById("popupContent");
@@ -249,14 +280,14 @@
     popup.style.display = "none";
   });
 
-  // Cerrar al hacer clic fuera del contenido
+ 
   popup.addEventListener("click", (e) => {
     if (!popupContent.contains(e.target)) {
       popup.style.display = "none";
     }
   });
 
-  // Cerrar con la tecla ESC
+  
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       popup.style.display = "none";
@@ -289,7 +320,35 @@
   });
 </script>
 
-
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 6,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 1700,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
