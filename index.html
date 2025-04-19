@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bulkerwapp</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<body>
+
+  <header class="main-header">
+    <div class="container-header">
+      <div class="logo">
+        <img src="Imagenes/logoBlanco.png" alt="" id="logoB">
+      </div>
+      <nav class="nav-header">
+        <ul>
+          <li><a href="#" id="btnIngresar">Ingresar</a></li>
+          <li><a href="#footer">Sobre Nosotros</a></li>
+          <li><a href="#" class="contact-trigger" >Contáctenos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="popup-overlay" id="loginPopup">
+    <div class="popup-content" id="popupContent">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="ejemplo@mail.com" required>
+  
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+  
+        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+  
+        <button type="button">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+<div id="contactPopup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-popup" id="closePopup">&times;</span>
+    <h2>Contáctenos</h2>
+    <form>
+      <label>Su nombre *</label>
+      <input type="text" required />
+
+      <label>Número de teléfono</label>
+      <input type="tel" />
+
+      <label>Correo electrónico *</label>
+      <input type="email" required />
+
+      <label>Su empresa</label>
+      <input type="text" />
+
+      <label>Asunto *</label>
+      <input type="text" required />
+
+      <label>Su pregunta</label>
+      <textarea rows="4"></textarea>
+
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </div>
+</div>
+
+
+  <section class="presentacion">
+    <div class="container">
+      <h1 id="txtTitle">Bulkerwapp</h1> 
+      <h3 style="text-align: left;">  Información automatizada.</h3>
+      <img id="imgIn" src="Imagenes/logoInicio.jpg" alt="">
+    </div>
+  </section>
+
+  <section class="tab-menu">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="timeline">¿Que es?</button>
+      <button class="tab-button " data-tab="otra">Funciones</button>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="timeline">
+        <section class="otra-seccion">
+          <div class="container">
+            <h2 class="txtOtra">¿Que es Bulkerwapp?</h2>
+            <p class="txtOtra">
+              Bulkerwapp es una plataforma pensada para quienes desean automatizar la creación, programación y envío de mensajes desde cualquier dispositivo con conexión a internet, de forma simple y efectiva.
+            <br>
+              Con tecnología avanzada y un software versátil, Bulkerwapp se adapta a empresas, profesionales, instituciones y cualquier organización que necesita un canal de comunicación ágil, profesional y confiable.
+           <br>
+              Podés crear campañas, confirmar turnos, enriquecer tu base de datos, y configurar respuestas automáticas. También podés redirigir llamadas a texto, interactuar por comandos y ofrecer promociones de forma directa y personalizada.
+           </p>
+          </div>
+        </section>
+      </div>
+      <div class="tab-pane" id="otra">
+        <section class="otra-seccion">
+          <div class="container">
+            <h2 class="txtOtra">Funciones de Bulkerwapp</h2>
+            <p class="txtOtra">⮚ 	 Conecta mediante un bot a su base de datos, para enviar mensajes sin intervención humana.
+              <br>
+              ⮚ 	 Permite redirigir llamadas a texto de WhatsApp.
+              <br>
+              ⮚ 	 Responde automáticamente a sus clientes de acuerdo con reglas precisas y comandos configurables muy fácilmente.
+              <br>
+              ⮚ 	 Enviar automáticamente mensajes de bienvenida con menús y comandos dinámicos.
+              <br>
+              ⮚ 	 Configurar comandos para automatizar el envío de ofertas o dar otra información a los clientes.
+              <br>
+              ⮚ 	 Enviar tanto respuestas de texto como mensajes multimedia, imágenes, enlaces y emojis.
+              <br>
+              ⮚ 	 Rastrear todos los mensajes recibidos de los clientes y responder manualmente a los mismos.
+              <br>
+              ⮚ 	 Enviar mensajes de WhatsApp directamente desde su PC (incluso a los contactos no guardados en la libreta de direcciones) y posibilita la
+                    creación y el filtrado de bases de datos.  
+              <br>
+              ⮚ 	 Capacidad de personalizar el mensaje para enviar con variables, etiquetas y textos aleatorios.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section id="tl" class="timeline">
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content" id="a1">
+          <h3>Inicio del Proyecto Bulkerwapp (2020)</h3>
+          <p>Propuesta de solución de una problemática específica de nuestro primer cliente.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content" id="a2">
+          <h3>Bulkerwapp 1.0 (2022)</h3>
+          <p>Sistema de envíos desarrollado por nuestro equipo inicial.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content" id="a3">
+          <h3>Bulkerwapp 2.0 (2023)</h3>
+          <p>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content" id="a4">
+          <h3>Bulkerwapp 3.0 (2024)</h3>
+          <p>Sistema de envíos tercerizado y optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="swiper-section">
+    <h2 id="txtE">Clientes que confían en nosotros</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/cer.png" alt="Logo 1" /><h5 class="txtSlider">Centro de Emergencias de Rosario</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/cibic.png" alt="Logo 2" /><h5 class="txtSlider">Cibic Laboratorios</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/fertya.png" alt="Logo 3" /><h5 class="txtSlider">Fertya Medicina Reproductiva</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/icr.png" alt="Logo 4" /><h5 class="txtSlider">Instituto Cardovascular de Rosario</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/ineco.png" alt="Logo 5" /><h5 class="txtSlider">Instituto de Neurología Cognitiva</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/kozaca.png" alt="Logo 6" /><h5 class="txtSlider">Kozaca</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/parque.png" alt="Logo 7" /><h5 class="txtSlider">Sanatorio Parque</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/sdniños.png" alt="Logo 8" /><h5 class="txtSlider">Sanatorio de Niños</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/elas.png" alt="Logo 9" /><h5 class="txtSlider">Elas</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/maternidad.png" alt="Logo 10" /><h5 class="txtSlider">Maternidad Oroño</h5></div>
+        <div class="swiper-slide"><img class="imgSlider" src="Imagenes/grupooroño.png" alt="Logo 11" /><h5 class="txtSlider">Grupo Oroño</h5></div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Enlaces de Interés</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#" class="contact-trigger">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Acerca de</h3>
+        <p>
+          BULKERWAPP es una plataforma diseñada para aquellos que quieren automatizar la creación, la programación y el envío de información desde cualquier dispositivo con acceso a internet de una manera sencilla y eficaz.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Contacte con nosotros</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-comment-dots"></i> <a href="#">Contáctenos</a></li>
+          <li><i class="fas fa-envelope"></i> info@bulkerwapp.com</li>
+          <li><i class="fas fa-phone"></i> +54 341-6175085 / 3603322 / 6401224</li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-home"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="copy">Copyright © Bulkerwapp</p>
+    </div>
+  </footer>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const tabId = button.getAttribute('data-tab');
+
+        tabPanes.forEach(pane => {
+          pane.classList.remove('active');
+          if (pane.id === tabId) {
+            pane.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+<script>
+  const items = document.querySelectorAll('.timeline-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  items.forEach(item => {
+    observer.observe(item);
+  });
+</script>
+
+<script>
+  const ingresarLink = document.querySelector('a[href="#"]'); 
+  const popup = document.getElementById("loginPopup");
+  const closeBtn = document.getElementById("closeBtn");
+  const popupContent = document.getElementById("popupContent");
+
+  ingresarLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    popup.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+ 
+  popup.addEventListener("click", (e) => {
+    if (!popupContent.contains(e.target)) {
+      popup.style.display = "none";
+    }
+  });
+
+  
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      popup.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactTriggers = document.querySelectorAll(".contact-trigger");
+    const contactPopup = document.getElementById("contactPopup");
+    const closePopup = document.getElementById("closePopup");
+
+    contactTriggers.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        contactPopup.style.display = "flex";
+      });
+    });
+
+    closePopup.addEventListener("click", function () {
+      contactPopup.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target === contactPopup) {
+        contactPopup.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 6,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 1700,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
