@@ -21,11 +21,10 @@ a {
 }
 
 #imgIn{
-  width: 15%;
+  width: 26%;
   float: right;
-  top: -190px;
-  border-radius: 50%;
- height: auto;
+  top: -228px;
+ height: 35%;
  position: relative;
  right: 15px;
 }
@@ -59,15 +58,30 @@ a {
 }
 
 .presentacion {
-  padding: 50px 30px;
-  background-color: #222;
-  text-align: center;
+  display: flex;
 }
 
 .presentacion h1 {
   color: #4CAF50;
   font-family: 'Bebas Neue', sans-serif;
 }
+
+.container1{
+  width: 30%;
+  background-color: #222;
+  padding: 50px 30px;
+}
+
+.presDerecha{
+  width: 70%;
+  background-image: url(Imagenes/imgIn.jpg);
+  padding: 50px 30px;
+  background-size: cover;
+  background-position: center;
+
+}
+
+
 
 .timeline {
   padding: 60px 30px;
@@ -417,7 +431,7 @@ a {
 }
 
 #tl{
-  background-color: white;
+  background-color: #555555 ;
 }
 
 #txtTitle{
@@ -435,7 +449,7 @@ font-family: 'Montserrat', sans-serif;
 
 .swiper-section {
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
   text-align: center;
 }
 .swiper-section h2 {
