@@ -20,6 +20,7 @@ a {
   width: 55%;
 }
 
+
 #imgIn{
   width: 26%;
   float: right;
@@ -28,6 +29,7 @@ a {
  position: relative;
  right: 15px;
 }
+
 
 .container-header {
   display: flex;
@@ -66,6 +68,7 @@ a {
   font-family: 'Bebas Neue', sans-serif;
 }
 
+
 .container1{
   width: 30%;
   background-color: #222;
@@ -80,6 +83,7 @@ a {
   background-position: center;
 
 }
+
 
 
 
