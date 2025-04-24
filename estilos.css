@@ -93,10 +93,22 @@ a {
   position: relative;
 }
 
-.timeline h2 {
+.timeline h5 {
   text-align: center;
   margin-bottom: 40px;
   color: #4CAF50;
+}
+
+.linea h5{
+  text-align: left;
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.linea h6{
+  text-align: left;
+  margin-bottom: 40px;
+  color: white;
 }
 
 .timeline-container {
@@ -104,6 +116,7 @@ a {
   max-width: 1000px;
   margin: auto;
   padding: 0 20px;
+  background-color: #f2f2f2;
 }
 
 .timeline-container::after {
@@ -119,21 +132,21 @@ a {
 
 .timeline-item {
   position: relative;
-  width: 50%;
-  padding: 20px 40px;
+  width: 40%;
+  padding: 5px 4px;
   box-sizing: border-box;
 }
 
 .timeline-item.left {
-  left: 0;
+  left: 10%;
   text-align: right;
-  padding-right: 60px;
+  padding-right: 30px;
 }
 
 .timeline-item.right {
   left: 50%;
   text-align: left;
-  padding-left: 60px;
+  padding-left: 30px;
 }
 
 .timeline-item .content {
@@ -149,7 +162,7 @@ a {
   border-right: 4px solid #4CAF50;
 }
 
-.timeline-item .content h3 {
+.timeline-item .content p {
   color: #4CAF50;
   margin-top: 0;
 }
@@ -427,15 +440,23 @@ a {
 }
 
 #txtE{
-  color: #595757 ;
+  color: #f2f2f2 ;
 }
 
 .txtSlider{
-  color: rgb(37, 37, 37);
+  color: #f2f2f2;
 }
 
 #tl{
-  background-color: #555555 ;
+  background-color:#f2f2f2 ;
+}
+
+#titFun{
+  color: #4CAF50;
+}
+
+#titQue{
+  color: #4CAF50;
 }
 
 #txtTitle{
@@ -452,8 +473,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .swiper-section {
-  padding: 40px 20px;
-  background-color: #f2f2f2;
+  padding: 25px 0;
+  background-color: #111;
   text-align: center;
 }
 .swiper-section h2 {
@@ -469,4 +490,11 @@ font-family: 'Montserrat', sans-serif;
   max-width: 100%;
   max-height: 50px;
   object-fit: contain;
+}
+
+hr {
+  height: 2px; 
+  border: none; 
+  color: #4CAF50; 
+  border-bottom: 2px solid #4CAF50; 
 }
