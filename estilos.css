@@ -86,6 +86,98 @@ a {
 
 
 
+.timeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.year {
+  font-size: 6rem;
+  color: #f2f2f2;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  opacity: 0.7;
+}
+
+.slide {
+  background: #222;
+  padding: 50px 30px;
+  border-radius: 20px;
+  border: 3px solid #4CAF50;
+  width: 400px;
+  height: 150px;
+  text-align: center;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: all 0.5s ease;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.slide p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: #555;
+}
+
+.arrow.left {
+  left: -80px;
+}
+
+.arrow.right {
+  right: -80px;
+}
+
+.arrow::after {
+  content: '';
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 8px;
+}
+
+.arrow.left::after {
+  transform: rotate(135deg);
+}
+
+.arrow.right::after {
+  transform: rotate(-45deg);
+}
+
 
 .timeline {
   padding: 60px 30px;
@@ -93,19 +185,19 @@ a {
   position: relative;
 }
 
-.timeline h5 {
+.timeline h2 {
   text-align: center;
   margin-bottom: 40px;
   color: #4CAF50;
 }
 
-.linea h5{
+.linea h2{
   text-align: left;
   margin-bottom: 40px;
   color: #4CAF50;
 }
 
-.linea h6{
+.linea h4{
   text-align: left;
   margin-bottom: 40px;
   color: white;
@@ -115,26 +207,15 @@ a {
   position: relative;
   max-width: 1000px;
   margin: auto;
-  padding: 0 20px;
-  background-color: #f2f2f2;
+  padding: 0 0px;
+  background-color: #222;
 }
 
-.timeline-container::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background-color: #4CAF50;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 
 .timeline-item {
   position: relative;
   width: 40%;
-  padding: 5px 4px;
-  box-sizing: border-box;
 }
 
 .timeline-item.left {
@@ -448,7 +529,8 @@ a {
 }
 
 #tl{
-  background-color:#f2f2f2 ;
+  background-color: #222;
+  padding: 20px 40px;   
 }
 
 #titFun{

@@ -103,31 +103,33 @@
 
   <section id="tl" class="linea">
     <div class="timeline-container">
-      <div class="timeline-item left">
-        <div class="content" id="a1">
-          <h5>Inicio del Proyecto Bulkerwapp (2020)</h5>
-          <h6>Propuesta de solución de una problemática específica de nuestro primer cliente.</h6>
-        </div>
+      <div class="year left-year">20</div>
+    
+      <div class="arrow left" onclick="prevSlide()"></div>
+    
+      <div class="slide active">
+        <h2>Bulkerwapp 1.0</h2>
+        <p>Propuesta de solución de una problemática específica de nuestro primer cliente.</p>
       </div>
-      <div class="timeline-item right">
-        <div class="content" id="a2">
-          <h5>Bulkerwapp 1.0 (2022)</h5>
-          <h6>Sistema de envíos desarrollado por nuestro equipo inicial.</h6>
-        </div>
+      <div class="slide">
+        <h2>Bulkerwapp 2.0</h2>
+        <p>Sistema de envíos desarrollado por nuestro equipo inicial.</p>
       </div>
-      <div class="timeline-item left">
-        <div class="content" id="a3">
-          <h5>Bulkerwapp 2.0 (2023)</h5>
-          <h6>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</h6>
-        </div>
+      <div class="slide">
+        <h2>Bulkerwapp 3.0</h2>
+        <p>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</p>
       </div>
-      <div class="timeline-item right">
-        <div class="content" id="a4">
-          <h5>Bulkerwapp 3.0 (2024)</h5>
-          <h6>Sistema de envíos tercerizado y optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</h6>
-        </div>
+      <div class="slide">
+        <h2>Bulkerwapp 4.0</h2>
+        <p>Sistema de envíos tercerizado y optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
       </div>
+    
+      <div class="arrow right" onclick="nextSlide()"></div>
+    
+      <div class="year right-year">20</div>
     </div>
+    
+    
   </section>
 
 
@@ -340,6 +342,54 @@
     }
   });
 </script>
+
+<script>
+  let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const leftYear = document.querySelector('.left-year');
+const rightYear = document.querySelector('.right-year');
+
+
+const years = [
+  { left: '20', right: '20' },
+  { left: '20', right: '22' },
+  { left: '20', right: '23' },
+  { left: '20', right: '24' }
+];
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+
+  leftYear.textContent = years[index].left;
+  rightYear.textContent = years[index].right;
+
+  document.querySelector('.arrow.left').style.display = index === 0 ? 'none' : 'flex';
+  document.querySelector('.arrow.right').style.display = index === slides.length - 1 ? 'none' : 'flex';
+}
+
+function nextSlide() {
+  if (currentSlide < slides.length - 1) {
+    currentSlide++;
+    showSlide(currentSlide);
+  }
+}
+
+function prevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    showSlide(currentSlide);
+  }
+}
+
+showSlide(currentSlide); 
+
+</script>
+  
 
 </body>
 </html>
