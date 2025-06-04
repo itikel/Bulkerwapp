@@ -1,3 +1,16 @@
+@media (max-width: 800px){
+.pc{
+ display: none;
+}
+}
+
+@media (min-width: 900px){
+.mobile{
+ display: none;
+}
+}
+
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -17,7 +30,7 @@ a {
 }
 
 #logoB {
-  width: 55%;
+  width:100%;
 }
 
 
@@ -298,9 +311,7 @@ a {
 }
 
 #mlfimg {
-  width: 50px;
-  height: auto; 
-  object-fit: contain; 
+  width:  200%;
 }
 
 
@@ -623,4 +634,12 @@ hr {
 #mlfimg {
   width: 7%; 
   height: auto;
+}
+
+#SN{
+  width: 0px;
+}
+
+#btnIngresar{
+  width: 5%;
 }
