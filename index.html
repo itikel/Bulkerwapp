@@ -121,8 +121,8 @@
         <p>Sistema de envíos adaptado para utilizar la potencia del lenguaje y la tecnología de Javascript.</p>
       </div>
       <div class="slide">
-        <h2>Bulkerwapp 4.0</h2>
-        <p>Sistema de envíos optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
+        <h2 id="slide4">Bulkerwapp 4.0</h2>
+        <p id="pslide4">Sistema de envíos optimizado para asegurar calidad y robustez a nuestros clientes, apuntando para competir en el mercado Argentino.</p>
       </div>
     
       <div class="arrow right" onclick="nextSlide()"></div>
@@ -222,7 +222,7 @@
       <p id="copy">Copyright © Bulkerwapp</p>
       <div class="mlf">
         <h4>Creado por</h4>
-        <img id="mlfimg" src="Imagenes/MLF-sin-fondo.png" alt="Logo MLF">
+        <img id="mlfimg" src="Imagenes/MLF-sin-fondo(2).png" alt="Logo MLF">
       </div>
     </div>
   </footer>
@@ -237,7 +237,7 @@
       <nav class="nav-header">
         <ul>
           <li><a href="#" id="btnIngresar">Ingresar</a></li>
-          <li><a href="#footer">Sobre Nosotros</a></li>
+          <li id="SobN"><a href="#footer">Sobre Nosotros</a></li>
           <li><a href="#" class="contact-trigger" >Contáctenos</a></li>
         </ul>
       </nav>
@@ -295,10 +295,11 @@
 
   <section class="presentacion">
     <div class="container1">
+       <div class="presDerecha"></div>
       <h1 id="txtTitle">Bulkerwapp</h1> 
-      <h3 style="text-align: left;">  Información automatizada.</h3>
+      <h3 id="txtSub">  Información automatizada.</h3>
       </div>
-      <div class="presDerecha"></div>
+      <br>
   </section>
 
   <section class="otra-seccion">
@@ -316,7 +317,7 @@
 
   <section id="tl" class="linea">
     <div class="timeline-container">
-      <div class="year left-year">20</div>
+      
     
       <div class="arrow left" onclick="prevSlide()"></div>
     
@@ -338,8 +339,10 @@
       </div>
     
       <div class="arrow right" onclick="nextSlide()"></div>
-    
+      <div class="años">
+      <div class="year left-year">20</div>
       <div class="year right-year">20</div>
+      </div>
     </div>
     
     
@@ -434,7 +437,7 @@
       <p id="copy">Copyright © Bulkerwapp</p>
       <div class="mlf">
         <h4>Creado por</h4>
-        <img id="mlfimg" src="Imagenes/MLF-sin-fondo.png" alt="Logo MLF">
+        <img id="mlfimg" src="Imagenes/MLF-sin-fondo(2).png" alt="Logo MLF">
       </div>
     </div>
   </footer>
@@ -567,51 +570,67 @@
 </script>
 
 <script>
-  let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const leftYear = document.querySelector('.left-year');
-const rightYear = document.querySelector('.right-year');
+  function initTimeline(container) {
+    let currentSlide = 0;
 
+    const slides = container.querySelectorAll('.slide');
+    const leftYear = container.querySelector('.left-year');
+    const rightYear = container.querySelector('.right-year');
+    const arrowLeft = container.querySelector('.arrow.left');
+    const arrowRight = container.querySelector('.arrow.right');
 
-const years = [
-  { left: '20', right: '20' },
-  { left: '20', right: '22' },
-  { left: '20', right: '23' },
-  { left: '20', right: '24' }
-];
+    const years = [
+      { left: '20', right: '20' },
+      { left: '20', right: '22' },
+      { left: '20', right: '23' },
+      { left: '20', right: '24' }
+    ];
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) {
-      slide.classList.add('active');
+    function showSlide(index) {
+      index = Math.max(0, Math.min(index, slides.length - 1));
+      currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+
+      leftYear.textContent = years[index].left;
+      rightYear.textContent = years[index].right;
+
+      arrowLeft.style.display = index === 0 ? 'none' : 'flex';
+      arrowRight.style.display = index === slides.length - 1 ? 'none' : 'flex';
     }
+
+    arrowLeft.addEventListener('click', () => showSlide(currentSlide - 1));
+    arrowRight.addEventListener('click', () => showSlide(currentSlide + 1));
+
+    showSlide(currentSlide);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll('.timeline-container');
+
+    containers.forEach(container => {
+      const style = window.getComputedStyle(container);
+      if (style.display !== 'none') {
+        initTimeline(container);
+      }
+    });
   });
 
-  leftYear.textContent = years[index].left;
-  rightYear.textContent = years[index].right;
-
-  document.querySelector('.arrow.left').style.display = index === 0 ? 'none' : 'flex';
-  document.querySelector('.arrow.right').style.display = index === slides.length - 1 ? 'none' : 'flex';
-}
-
-function nextSlide() {
-  if (currentSlide < slides.length - 1) {
-    currentSlide++;
-    showSlide(currentSlide);
-  }
-}
-
-function prevSlide() {
-  if (currentSlide > 0) {
-    currentSlide--;
-    showSlide(currentSlide);
-  }
-}
-
-showSlide(currentSlide); 
-
+  window.addEventListener('resize', () => {
+    // En móviles o escritorio puede cambiar la visibilidad
+    const containers = document.querySelectorAll('.timeline-container');
+    containers.forEach(container => {
+      const style = window.getComputedStyle(container);
+      if (style.display !== 'none') {
+        initTimeline(container); // reiniciar si está visible
+      }
+    });
+  });
 </script>
+
+
   
 
 </body>
