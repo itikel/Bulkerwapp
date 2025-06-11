@@ -171,12 +171,12 @@ height: auto;
 }
 
 .arrow.left {
-  left: -20px;
+  left: 1%;
   top: 80%;
 }
 
 .arrow.right {
-  right: -20px;
+  left: 90%;
   top: 80%;
 }
 
@@ -296,7 +296,9 @@ font-size: 0.7rem;
   gap: -10rem !;
 }
 
-
+.linea p{
+font-size: medium;
+}
 }
 
 body {
