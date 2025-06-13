@@ -24,7 +24,7 @@
       </div>
       <nav class="nav-header">
         <ul>
-          <li><a href="#" id="btnIngresar">Ingresar</a></li>
+          <li><a href="#" class="btnIngresar">Ingresar</a></li>
           <li><a href="#footer">Sobre Nosotros</a></li>
           <li><a href="#" class="contact-trigger" >Contáctenos</a></li>
         </ul>
@@ -32,54 +32,7 @@
     </div>
   </header>
 
-  <div class="popup-overlay" id="loginPopup">
-    <div class="popup-content" id="popupContent">
-      <span class="close-btn" id="closeBtn">&times;</span>
-      <h2>Iniciar Sesión</h2>
-      <form>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" placeholder="ejemplo@mail.com" required>
   
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="••••••••" required>
-  
-        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
-  
-        <button type="button">Iniciar sesión</button>
-      </form>
-    </div>
-  </div>
-  
-
-
-<div id="contactPopup" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-popup" id="closePopup">&times;</span>
-    <h2>Contáctenos</h2>
-    <form>
-      <label>Su nombre *</label>
-      <input type="text" required />
-
-      <label>Número de teléfono</label>
-      <input type="tel" />
-
-      <label>Correo electrónico *</label>
-      <input type="email" required />
-
-      <label>Su empresa</label>
-      <input type="text" />
-
-      <label>Asunto *</label>
-      <input type="text" required />
-
-      <label>Su pregunta</label>
-      <textarea rows="4"></textarea>
-
-      <button type="submit" class="submit-btn">Enviar</button>
-    </form>
-  </div>
-</div>
-
 
   <section class="presentacion">
     <div class="container1">
@@ -236,61 +189,13 @@
       </div>
       <nav class="nav-header">
         <ul>
-          <li><a href="#" id="btnIngresar">Ingresar</a></li>
-          <li id="SobN"><a href="#footer">Sobre Nosotros</a></li>
+          <li><a href="#" class="btnIngresar">Ingresar</a></li>
+          <li><a href="#footerMobile">Sobre Nosotros</a></li>
           <li><a href="#" class="contact-trigger" >Contáctenos</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
-  <div class="popup-overlay" id="loginPopup">
-    <div class="popup-content" id="popupContent">
-      <span class="close-btn" id="closeBtn">&times;</span>
-      <h2>Iniciar Sesión</h2>
-      <form>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" placeholder="ejemplo@mail.com" required>
-  
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="••••••••" required>
-  
-        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
-  
-        <button type="button">Iniciar sesión</button>
-      </form>
-    </div>
-  </div>
-  
-
-
-<div id="contactPopup" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-popup" id="closePopup">&times;</span>
-    <h2>Contáctenos</h2>
-    <form>
-      <label>Su nombre *</label>
-      <input type="text" required />
-
-      <label>Número de teléfono</label>
-      <input type="tel" />
-
-      <label>Correo electrónico *</label>
-      <input type="email" required />
-
-      <label>Su empresa</label>
-      <input type="text" />
-
-      <label>Asunto *</label>
-      <input type="text" required />
-
-      <label>Su pregunta</label>
-      <textarea rows="4"></textarea>
-
-      <button type="submit" class="submit-btn">Enviar</button>
-    </form>
-  </div>
-</div>
 
 
   <section class="presentacion">
@@ -399,6 +304,7 @@
   
   <hr>
 
+  <div id="footerMobile">
   <footer id="footer">
     <div class="footer-container">
       <div class="footer-col">
@@ -439,6 +345,7 @@
       </div>
     </div>
   </footer>
+  </div>
    </div>
 
   <script>
@@ -483,32 +390,34 @@
 </script>
 
 <script>
-  const ingresarLink = document.querySelector('a[href="#"]'); 
-  const popup = document.getElementById("loginPopup");
-  const closeBtn = document.getElementById("closeBtn");
-  const popupContent = document.getElementById("popupContent");
+  document.addEventListener("DOMContentLoaded", function () {
+    const ingresarLinks = document.querySelectorAll('.btnIngresar');
+    const popup = document.getElementById("loginPopup");
+    const closeBtn = document.getElementById("closeBtn");
+    const popupContent = document.getElementById("popupContent");
 
-  ingresarLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    popup.style.display = "flex";
-  });
+    ingresarLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.style.display = "flex";
+      });
+    });
 
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-
- 
-  popup.addEventListener("click", (e) => {
-    if (!popupContent.contains(e.target)) {
+    closeBtn.addEventListener("click", () => {
       popup.style.display = "none";
-    }
-  });
+    });
 
-  
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      popup.style.display = "none";
-    }
+    popup.addEventListener("click", (e) => {
+      if (!popupContent.contains(e.target)) {
+        popup.style.display = "none";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        popup.style.display = "none";
+      }
+    });
   });
 </script>
 
@@ -632,6 +541,53 @@
   
 
 </body>
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-content" id="popupContent">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="ejemplo@mail.com" required>
+  
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+  
+        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+  
+        <button type="button">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+<div id="contactPopup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-popup" id="closePopup">&times;</span>
+    <h2>Contáctenos</h2>
+    <form>
+      <label>Su nombre *</label>
+      <input type="text" required />
+
+      <label>Número de teléfono</label>
+      <input type="tel" />
+
+      <label>Correo electrónico *</label>
+      <input type="email" required />
+
+      <label>Su empresa</label>
+      <input type="text" />
+
+      <label>Asunto *</label>
+      <input type="text" required />
+
+      <label>Su pregunta</label>
+      <textarea rows="4"></textarea>
+
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </div>
+</div>
 </html>
 
 
